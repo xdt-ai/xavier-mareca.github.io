@@ -526,7 +526,8 @@
       h2 { font-size: 1.2rem; }
       .hero { padding: 3rem 0 2rem; }
       .hero-tagline { font-size: 1rem; }
-      .hero-actions { flex-wrap: wrap; gap: 0.5rem; }
+      .hero-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+      .hero-actions .btn { justify-content: center; }
       .btn { font-size: 12px; padding: 0.6rem 1rem; }
       .metrics-grid { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
       .metric-value { font-size: 2rem; }
