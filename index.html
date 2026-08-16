@@ -461,7 +461,7 @@
     @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
 
     .back-to-top {
-      position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 99;
+      position: fixed; bottom: 2.5rem; right: 1.5rem; z-index: 99;
       width: 36px; height: 36px; border-radius: 6px;
       background: var(--bg-card); border: 1px solid var(--border);
       display: flex; align-items: center; justify-content: center;
@@ -511,20 +511,6 @@
     .nav-logo:hover .nav-logo-img { animation-duration: 1s; }
     .nav-logo-img.scrolled { animation: none; filter: none; opacity: 0.85; }
 
-    /* HAMBURGER */
-    .nav-hamburger {
-      display: none; flex-direction: column; gap: 5px;
-      background: none; border: none; cursor: pointer; padding: 4px; z-index: 200;
-    }
-    .nav-hamburger span {
-      display: block; width: 24px; height: 2px;
-      background: var(--text-secondary); border-radius: 2px;
-      transition: all 0.2s;
-    }
-    .nav-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
-    .nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
-
     @media (max-width: 768px) {
       .wrap { padding: 0 1.25rem; }
       .hero { padding: 3.5rem 0 2.5rem; }
@@ -539,15 +525,8 @@
       .form-row { flex-direction: column; }
       .focus-timeline { padding-left: 1.5rem; }
       .filter-tabs { overflow-x: auto; }
-      .nav-hamburger { display: flex; }
-      .nav-links {
-        display: none; position: absolute; top: 100%; left: 0; right: 0;
-        background: var(--bg-glass); backdrop-filter: blur(20px);
-        border-bottom: 1px solid var(--border);
-        flex-direction: column; padding: 1rem 1.5rem; gap: 1rem;
-      }
-      .nav-links.open { display: flex; }
-      .nav-links a { font-size: 15px; }
+      .nav-links { gap: 0.8rem; }
+      .nav-links a { font-size: 11px; }
     }
     @media (max-width: 480px) {
       .hero-actions { flex-direction: column; }
@@ -566,14 +545,11 @@
         <img class="nav-logo-img" src="data:image/png;base64,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" alt=".x/ logo" style="height:56px;width:auto;" />
       </a>
     </div>
-    <button class="nav-hamburger" id="navHamburger" aria-label="Menu" onclick="toggleMobileNav()">
-      <span></span><span></span><span></span>
-    </button>
     <div class="nav-links" id="navLinks">
-      <a href="#about" onclick="closeMobileNav()">About</a>
-      <a href="#focus" onclick="closeMobileNav()">Focus</a>
-      <a href="#projects" onclick="closeMobileNav()">Projects</a>
-      <a href="#stack" onclick="closeMobileNav()">Stack</a>
+      <a href="#about">About</a>
+      <a href="#focus">Focus</a>
+      <a href="#projects">Projects</a>
+      <a href="#stack">Stack</a>
     </div>
   </div>
 </nav>
@@ -1010,17 +986,6 @@ const mg = document.querySelector('.metrics-grid');
 if (mg) metricsObs.observe(mg);
 
 /* PROJECT FILTER */
-function toggleMobileNav() {
-  const btn = document.getElementById('navHamburger');
-  const links = document.getElementById('navLinks');
-  btn.classList.toggle('open');
-  links.classList.toggle('open');
-}
-function closeMobileNav() {
-  document.getElementById('navHamburger').classList.remove('open');
-  document.getElementById('navLinks').classList.remove('open');
-}
-
 function filterProjects(cat, btn) {
   const cards = document.querySelectorAll('.project-card');
   const tabs = document.querySelectorAll('.filter-tab');
