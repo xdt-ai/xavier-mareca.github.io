@@ -125,7 +125,7 @@
       font-weight: 700; line-height: 1.05; letter-spacing: -0.025em; margin-bottom: 0.75rem;
     }
     h1 .name { color: var(--text-primary); }
-    h1 .accent { color: #4ade80; }
+    h1 .accent { color: #00e5e5; }
     .cursor {
       display: inline-block; width: 2px; height: 1em; background: #ffffff;
       margin-left: 6px; vertical-align: text-bottom; animation: blink 1s step-end infinite;
@@ -195,9 +195,9 @@
       border-bottom: 1px solid var(--border); padding-bottom: 0;
     }
     .filter-tab {
-      font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em;
+      font-family: var(--mono); font-size: 13px; letter-spacing: 0.08em;
       text-transform: uppercase; color: var(--text-muted); background: none; border: none;
-      padding: 0.5rem 0.85rem; cursor: pointer; transition: all 0.2s;
+      padding: 0.6rem 1rem; cursor: pointer; transition: all 0.2s;
       border-bottom: 2px solid transparent; margin-bottom: -1px;
     }
     .filter-tab:hover { color: var(--text-secondary); }
@@ -541,8 +541,8 @@
       </a>
     </div>
     <div class="nav-links">
-      <a href="#projects">Projects</a>
       <a href="#about">About</a>
+      <a href="#projects">Projects</a>
       <a href="#stack">Stack</a>
       <a href="#focus">Focus</a>
     </div>
@@ -598,6 +598,50 @@
 
 
 
+  <section id="about">
+    <div class="section-header"><span class="section-tag">Background</span><div class="section-line"></div></div>
+
+    <h2 class="reveal" style="font-size:clamp(1.5rem,3.5vw,2.1rem);line-height:1.2;margin-bottom:0.6rem;">
+      8 years reading data.<br><span style="color:var(--accent);">Now teaching machines to do it.</span>
+    </h2>
+    <p class="reveal reveal-delay-1" style="font-size:16px;color:var(--text-secondary);max-width:580px;line-height:1.8;margin-bottom:1.75rem;">
+      8 years in data, starting with Power BI, DAX, and semantic models across finance, retail, and logistics. From 2022, added AI to the mix — RAG pipelines, LangChain, SageMaker, multi-agent systems with CrewAI. The projects here sit at the intersection of both: pipelines that feed models, models that enhance dashboards, agents that automate the layer in between.
+    </p>
+
+    <div class="about-areas reveal reveal-delay-2">
+      <div class="about-area area-ai">
+        <div class="about-area-icon" style="background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.18);">
+          <svg viewBox="0 0 24 24" fill="#a78bfa"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1.07A7 7 0 0 1 14 23h-4a7 7 0 0 1-5.93-4H3a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z"/></svg>
+        </div>
+        <div class="about-area-title" style="color:var(--accent-purple);">AI &amp; LLMs</div>
+        <div class="about-area-text"><span>RAG pipelines</span>, LangChain, CrewAI agents, Anthropic Claude integrations.</div>
+      </div>
+      <div class="about-area area-cloud">
+        <div class="about-area-icon" style="background:rgba(251,146,60,0.1);border:1px solid rgba(251,146,60,0.18);">
+          <svg viewBox="0 0 24 24" fill="#fb923c"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+        </div>
+        <div class="about-area-title" style="color:var(--accent-orange);">Cloud Engineering</div>
+        <div class="about-area-text"><span>AWS SageMaker</span>, Lambda, Step Functions — serverless, event-driven architectures.</div>
+      </div>
+      <div class="about-area area-bi">
+        <div class="about-area-icon" style="background:rgba(242,200,17,0.1);border:1px solid rgba(242,200,17,0.2);">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="11" width="4" height="10" rx="1" fill="#F2C811"/>
+            <rect x="8" y="7" width="4" height="14" rx="1" fill="#F2C811" opacity="0.85"/>
+            <rect x="14" y="3" width="4" height="18" rx="1" fill="#F2C811" opacity="0.7"/>
+            <rect x="20" y="1" width="2" height="20" rx="1" fill="#F2C811" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="about-area-title" style="color:#f2c811;">Business Intelligence</div>
+        <div class="about-area-text"><span>Advanced DAX</span>, semantic models, high-performance Power BI analytics.</div>
+      </div>
+    </div>
+
+    <div class="about-footer reveal reveal-delay-3">
+      Spanish · French · English · German ·
+      <a href="https://www.linkedin.com/in/xavier-mareca-247344148/?locale=en" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
   <section id="projects">
     <div class="section-header"><span class="section-tag">Work</span><div class="section-line"></div></div>
     <h2 class="reveal">Selected projects</h2>
@@ -772,50 +816,6 @@
           <span class="project-result"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Real-time</span>
         </div>
       </div>
-    </div>
-  </section>
-  <section id="about">
-    <div class="section-header"><span class="section-tag">Background</span><div class="section-line"></div></div>
-
-    <h2 class="reveal" style="font-size:clamp(1.5rem,3.5vw,2.1rem);line-height:1.2;margin-bottom:0.6rem;">
-      8 years reading data.<br><span style="color:var(--accent);">Now teaching machines to do it.</span>
-    </h2>
-    <p class="reveal reveal-delay-1" style="font-size:16px;color:var(--text-secondary);max-width:580px;line-height:1.8;margin-bottom:1.75rem;">
-      8 years in data, starting with Power BI, DAX, and semantic models across finance, retail, and logistics. From 2022, added AI to the mix — RAG pipelines, LangChain, SageMaker, multi-agent systems with CrewAI. The projects here sit at the intersection of both: pipelines that feed models, models that enhance dashboards, agents that automate the layer in between.
-    </p>
-
-    <div class="about-areas reveal reveal-delay-2">
-      <div class="about-area area-ai">
-        <div class="about-area-icon" style="background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.18);">
-          <svg viewBox="0 0 24 24" fill="#a78bfa"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1.07A7 7 0 0 1 14 23h-4a7 7 0 0 1-5.93-4H3a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z"/></svg>
-        </div>
-        <div class="about-area-title" style="color:var(--accent-purple);">AI &amp; LLMs</div>
-        <div class="about-area-text"><span>RAG pipelines</span>, LangChain, CrewAI agents, Anthropic Claude integrations.</div>
-      </div>
-      <div class="about-area area-cloud">
-        <div class="about-area-icon" style="background:rgba(251,146,60,0.1);border:1px solid rgba(251,146,60,0.18);">
-          <svg viewBox="0 0 24 24" fill="#fb923c"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
-        </div>
-        <div class="about-area-title" style="color:var(--accent-orange);">Cloud Engineering</div>
-        <div class="about-area-text"><span>AWS SageMaker</span>, Lambda, Step Functions — serverless, event-driven architectures.</div>
-      </div>
-      <div class="about-area area-bi">
-        <div class="about-area-icon" style="background:rgba(242,200,17,0.1);border:1px solid rgba(242,200,17,0.2);">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <rect x="2" y="11" width="4" height="10" rx="1" fill="#F2C811"/>
-            <rect x="8" y="7" width="4" height="14" rx="1" fill="#F2C811" opacity="0.85"/>
-            <rect x="14" y="3" width="4" height="18" rx="1" fill="#F2C811" opacity="0.7"/>
-            <rect x="20" y="1" width="2" height="20" rx="1" fill="#F2C811" opacity="0.5"/>
-          </svg>
-        </div>
-        <div class="about-area-title" style="color:#f2c811;">Business Intelligence</div>
-        <div class="about-area-text"><span>Advanced DAX</span>, semantic models, high-performance Power BI analytics.</div>
-      </div>
-    </div>
-
-    <div class="about-footer reveal reveal-delay-3">
-      Spanish · French · English · German ·
-      <a href="https://www.linkedin.com/in/xavier-mareca-247344148/?locale=en" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </section>
   <section id="stack">
