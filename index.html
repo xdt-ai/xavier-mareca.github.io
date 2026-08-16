@@ -55,7 +55,7 @@
     html { scroll-behavior: smooth; }
     body {
       background: var(--bg); color: var(--text-primary);
-      font-family: var(--sans); font-size: 15px; line-height: 1.6;
+      font-family: var(--sans); font-size: 16px; line-height: 1.65;
       overflow-x: hidden;
     }
     body::before {
@@ -104,7 +104,7 @@
     .nav-logo-wrap:hover .logo-dl:hover { opacity: 1; }
     .nav-links { display: flex; gap: 2rem; align-items: center; }
     .nav-links a {
-      font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em;
+      font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em;
       text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.15s;
       position: relative;
     }
@@ -143,8 +143,8 @@
     .hero-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; }
     .btn {
       display: inline-flex; align-items: center; gap: 0.5rem;
-      font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em;
-      text-transform: uppercase; text-decoration: none; padding: 0.65rem 1.3rem;
+      font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em;
+      text-transform: uppercase; text-decoration: none; padding: 0.7rem 1.4rem;
       border-radius: 6px; transition: all 0.18s; border: 1px solid; cursor: pointer;
     }
     .btn-primary { background: transparent; color: var(--accent); border-color: var(--accent); font-weight: 700; }
@@ -172,7 +172,7 @@
     .metric-value.purple { color: var(--accent-purple); }
     .metric-value.orange { color: var(--accent-orange); }
     .metric-label {
-      font-family: var(--mono); font-size: 9px; color: var(--text-secondary);
+      font-family: var(--mono); font-size: 11px; color: var(--text-secondary);
       letter-spacing: 0.08em; text-transform: uppercase;
     }
 
@@ -195,7 +195,7 @@
       border-bottom: 1px solid var(--border); padding-bottom: 0;
     }
     .filter-tab {
-      font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em;
       text-transform: uppercase; color: var(--text-muted); background: none; border: none;
       padding: 0.5rem 0.85rem; cursor: pointer; transition: all 0.2s;
       border-bottom: 2px solid transparent; margin-bottom: -1px;
@@ -214,7 +214,7 @@
       color: var(--accent); background: var(--accent-dim); border: 1px solid var(--accent-border);
       padding: 0.3rem 0.85rem; border-radius: 100px; margin-bottom: 1rem;
     }
-    .about-badge-dot { font-size: 8px; }
+    .about-badge-dot { font-size: 10px; }
     .about-text {
       font-size: 14px; color: var(--text-secondary); line-height: 1.8;
       max-width: 660px; margin-bottom: 1.75rem;
@@ -233,22 +233,22 @@
     }
     .about-area.area-ai::before { background: var(--accent-purple); opacity: 0.5; }
     .about-area.area-cloud::before { background: var(--accent-orange); opacity: 0.5; }
-    .about-area.area-bi::before { background: #ffdd00; opacity: 0.5; }
+    .about-area.area-bi::before { background: #f2c811; opacity: 0.5; }
     .about-area:hover { border-color: var(--border-hover); background: var(--bg-card-hover); }
     .about-area-icon {
-      width: 28px; height: 28px; border-radius: 6px; margin-bottom: 0.65rem;
+      width: 34px; height: 34px; border-radius: 6px; margin-bottom: 0.75rem;
       display: flex; align-items: center; justify-content: center;
     }
-    .about-area-icon svg { width: 14px; height: 14px; }
+    .about-area-icon svg { width: 17px; height: 17px; }
     .about-area-title {
-      font-family: var(--mono); font-size: 11px; font-weight: 700;
-      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.4rem;
+      font-family: var(--mono); font-size: 12px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.5rem;
     }
-    .about-area-text { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+    .about-area-text { font-size: 15px; color: var(--text-secondary); line-height: 1.7; }
     .about-area-text span { color: var(--text-primary); }
     .about-footer {
       margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--border);
-      font-size: 13.5px; color: var(--text-secondary); line-height: 1.7;
+      font-size: 15px; color: var(--text-secondary); line-height: 1.7;
     }
     .about-footer strong { color: var(--text-secondary); font-weight: 600; }
     .about-footer a { color: var(--accent); text-decoration: none; }
@@ -275,10 +275,10 @@
     .focus-item.active::before { background: var(--accent); box-shadow: 0 0 6px rgba(52,211,153,0.35); }
     .focus-item.completed::before { border-color: var(--accent-green); background: var(--accent-green); box-shadow: none; }
     .focus-content { flex: 1; }
-    .focus-title { font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 0.15rem; }
-    .focus-text { font-size: 13.5px; color: var(--text-secondary); }
+    .focus-title { font-family: var(--mono); font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 0.2rem; }
+    .focus-text { font-size: 14px; color: var(--text-secondary); }
     .focus-badge {
-      font-family: var(--mono); font-size: 8px;
+      font-family: var(--mono); font-size: 10px;
       letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent);
       background: var(--accent-dim); border: 1px solid var(--accent-border);
       padding: 0.1rem 0.45rem; border-radius: 100px; white-space: nowrap; flex-shrink: 0; align-self: center;
@@ -300,34 +300,34 @@
       opacity: 0.6; transition: opacity 0.2s;
     }
     .project-card.card-ai::before { background: linear-gradient(90deg, var(--accent-purple), var(--accent)); opacity: 0.6; }
-    .project-card.card-bi::before { background: #ffdd00; opacity: 0.6; }
+    .project-card.card-bi::before { background: #f2c811; opacity: 0.6; }
     .project-card.card-data::before { background: var(--accent-green); opacity: 0.6; }
     .project-card.card-cloud::before { background: var(--accent-orange); opacity: 0.6; }
     .project-card:hover { border-color: var(--border-hover); background: var(--bg-card-hover); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.25); }
     .project-card:hover::before { opacity: 1; }
     .project-card.expanded { box-shadow: none; transform: none; }
-    .project-card-body { padding: 1.15rem 1.25rem; flex: 1; display: flex; flex-direction: column; gap: 0.6rem; }
+    .project-card-body { padding: 1.35rem 1.5rem; flex: 1; display: flex; flex-direction: column; gap: 0.7rem; }
     .project-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.5rem; }
     .project-title {
-      font-family: var(--mono); font-size: 13.5px; font-weight: 700; color: var(--text-primary); line-height: 1.35;
+      font-family: var(--mono); font-size: 15px; font-weight: 700; color: var(--text-primary); line-height: 1.35;
     }
     .project-badge {
-      font-family: var(--mono); font-size: 8px;
-      letter-spacing: 0.1em; text-transform: uppercase; padding: 0.15rem 0.55rem; border-radius: 3px; white-space: nowrap; flex-shrink: 0;
+      font-family: var(--mono); font-size: 10px;
+      letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.65rem; border-radius: 3px; white-space: nowrap; flex-shrink: 0;
     }
     .badge-live { color: #22c55e; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2); }
     .badge-new { color: var(--accent-purple); background: var(--accent-purple-dim); border: 1px solid var(--accent-purple-border); }
     .badge-done { color: var(--accent-green); background: var(--accent-green-dim); border: 1px solid var(--accent-green-border); }
     .badge-portfolio { color: var(--accent); background: var(--accent-dim); border: 1px solid var(--accent-border); }
-    .project-desc { font-size: 14.5px; color: var(--text-secondary); line-height: 1.7; flex: 1; }
+    .project-desc { font-size: 15px; color: var(--text-secondary); line-height: 1.75; flex: 1; }
     .project-meta {
-      display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: auto; padding-top: 0.6rem;
+      display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: auto; padding-top: 0.7rem;
       border-top: 1px solid var(--border);
     }
     .stack-tag {
-      font-family: var(--mono); font-size: 10px;
+      font-family: var(--mono); font-size: 11px;
       color: var(--text-secondary); background: var(--bg-hover);
-      border: 1px solid var(--border); border-radius: 3px; padding: 0.2rem 0.5rem;
+      border: 1px solid var(--border); border-radius: 3px; padding: 0.25rem 0.6rem;
     }
     .project-details {
       max-height: 0; overflow: hidden; transition: max-height 0.3s ease, opacity 0.3s ease; opacity: 0;
@@ -335,7 +335,7 @@
     .project-card.expanded .project-details { max-height: 300px; opacity: 1; }
     .project-details-inner {
       padding-top: 0.6rem; border-top: 1px solid var(--border);
-      font-size: 13px; color: var(--text-secondary); line-height: 1.7;
+      font-size: 14px; color: var(--text-secondary); line-height: 1.7;
     }
     .project-details-inner code {
       font-family: var(--mono); font-size: 10.5px; color: var(--accent);
@@ -355,18 +355,18 @@
     .stack-category-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.85rem; }
     .stack-category-icon { width: 18px; height: 18px; border-radius: 4px; display: flex; align-items: center; justify-content: center; }
     .stack-category-icon svg { width: 12px; height: 12px; }
-    .stack-category-title { font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; }
+    .stack-category-title { font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; }
     .pills { display: flex; flex-wrap: wrap; gap: 0.45rem; }
     .pill {
       display: flex; align-items: center; gap: 0.45rem;
       background: var(--bg-card); border: 1px solid var(--border);
       border-radius: 6px; padding: 0.45rem 0.85rem;
-      font-size: 13px; font-weight: 500; color: var(--text-primary); transition: all 0.18s; cursor: default;
+      font-size: 14px; font-weight: 500; color: var(--text-primary); transition: all 0.18s; cursor: default;
     }
     .pill::before { content: ''; width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; opacity: 0.7; }
     .pill:hover { border-color: var(--border-hover); background: var(--bg-card-hover); }
-    .pill-bi::before { background: #ffdd00; }
-    .pill-bi:hover { border-color: rgba(255,221,0,0.3); }
+    .pill-bi::before { background: #f2c811; }
+    .pill-bi:hover { border-color: rgba(242,200,17,0.3); }
     .pill-ai::before { background: #a78bfa; }
     .pill-ai:hover { border-color: rgba(167,139,250,0.3); }
     .pill-data::before { background: #4ade80; }
@@ -386,7 +386,7 @@
       font-family: var(--mono); font-size: 11px; font-weight: 700;
       color: var(--text-primary); letter-spacing: 0.08em; text-transform: uppercase;
     }
-    .contact-info-text { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+    .contact-info-text { font-size: 15px; color: var(--text-secondary); line-height: 1.7; }
     .contact-links { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.25rem; }
     .contact-link {
       display: flex; align-items: center; gap: 0.65rem;
@@ -397,7 +397,7 @@
     }
     .contact-link:hover { border-color: var(--accent-border); color: var(--accent); background: var(--accent-dim); }
     .contact-link svg { width: 13px; height: 13px; flex-shrink: 0; }
-    .contact-link-label { opacity: 0.5; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; margin-left: auto; }
+    .contact-link-label { opacity: 0.5; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; margin-left: auto; }
     .contact-availability {
       display: flex; align-items: center; gap: 0.5rem;
       font-family: var(--mono); font-size: 10px; color: var(--text-muted);
@@ -413,13 +413,13 @@
     .form-group { flex: 1; margin-bottom: 0.65rem; }
     .form-group:last-child { margin-bottom: 0; }
     .form-label {
-      display: block; font-family: var(--mono); font-size: 9px;
+      display: block; font-family: var(--mono); font-size: 11px;
       color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.35rem;
     }
     .form-input, .form-textarea {
       width: 100%; background: var(--bg); border: 1px solid var(--border);
       border-radius: 6px; padding: 0.6rem 0.85rem; font-family: var(--sans);
-      font-size: 14px; color: var(--text-primary); outline: none; transition: border-color 0.18s;
+      font-size: 15px; color: var(--text-primary); outline: none; transition: border-color 0.18s;
     }
     .form-input:focus, .form-textarea:focus { border-color: var(--accent-border); }
     .form-textarea { resize: vertical; min-height: 100px; }
@@ -447,7 +447,7 @@
     /* FOOTER */
     footer { border-top: 1px solid var(--border); padding: 1.75rem 0; margin-top: 0.5rem; }
     .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-    .footer-left { font-family: var(--mono); font-size: 11px; color: var(--text-muted); }
+    .footer-left { font-family: var(--mono); font-size: 12px; color: var(--text-muted); }
     .footer-left strong { color: var(--text-secondary); }
     .footer-links { display: flex; align-items: center; gap: 0.75rem; }
     .footer-link {
@@ -599,7 +599,7 @@
     <h2 class="reveal" style="font-size:clamp(1.5rem,3.5vw,2.1rem);line-height:1.2;margin-bottom:0.6rem;">
       8 years reading data.<br><span style="color:var(--accent);">Now teaching machines to do it.</span>
     </h2>
-    <p class="reveal reveal-delay-1" style="font-size:13.5px;color:var(--text-secondary);max-width:580px;line-height:1.8;margin-bottom:1.75rem;">
+    <p class="reveal reveal-delay-1" style="font-size:16px;color:var(--text-secondary);max-width:580px;line-height:1.8;margin-bottom:1.75rem;">
       I started in BI — Power BI, DAX, semantic models, enterprise dashboards. Then in 2022 I went deep into AI: LangChain, RAG pipelines, SageMaker, multi-agent systems. Not a pivot. An extension. I now build data systems where the BI layer and the AI layer actually talk to each other.
     </p>
 
@@ -619,15 +619,15 @@
         <div class="about-area-text"><span>AWS SageMaker</span>, Lambda, Step Functions — serverless, event-driven architectures.</div>
       </div>
       <div class="about-area area-bi">
-        <div class="about-area-icon" style="background:rgba(255,221,0,0.1);border:1px solid rgba(255,221,0,0.2);">
+        <div class="about-area-icon" style="background:rgba(242,200,17,0.1);border:1px solid rgba(242,200,17,0.2);">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <rect x="2" y="11" width="4" height="10" rx="1" fill="#FFDD00"/>
-            <rect x="8" y="7" width="4" height="14" rx="1" fill="#FFDD00" opacity="0.85"/>
-            <rect x="14" y="3" width="4" height="18" rx="1" fill="#FFDD00" opacity="0.7"/>
-            <rect x="20" y="1" width="2" height="20" rx="1" fill="#FFDD00" opacity="0.5"/>
+            <rect x="2" y="11" width="4" height="10" rx="1" fill="#F2C811"/>
+            <rect x="8" y="7" width="4" height="14" rx="1" fill="#F2C811" opacity="0.85"/>
+            <rect x="14" y="3" width="4" height="18" rx="1" fill="#F2C811" opacity="0.7"/>
+            <rect x="20" y="1" width="2" height="20" rx="1" fill="#F2C811" opacity="0.5"/>
           </svg>
         </div>
-        <div class="about-area-title" style="color:#ffdd00;">Business Intelligence</div>
+        <div class="about-area-title" style="color:#f2c811;">Business Intelligence</div>
         <div class="about-area-text"><span>Advanced DAX</span>, semantic models, high-performance Power BI analytics.</div>
       </div>
     </div>
@@ -854,15 +854,15 @@
     <div style="margin-top:1.25rem;">
       <div class="stack-category reveal reveal-delay-1">
         <div class="stack-category-header">
-          <div class="stack-category-icon" style="background:rgba(255,221,0,0.08);border:1px solid rgba(255,221,0,0.2);">
+          <div class="stack-category-icon" style="background:rgba(242,200,17,0.08);border:1px solid rgba(242,200,17,0.2);">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
-              <rect x="2" y="12" width="3.5" height="9" rx="0.8" fill="#FFDD00"/>
-              <rect x="7" y="8" width="3.5" height="13" rx="0.8" fill="#FFDD00" opacity="0.85"/>
-              <rect x="12" y="4" width="3.5" height="17" rx="0.8" fill="#FFDD00" opacity="0.7"/>
-              <rect x="17" y="1" width="3" height="20" rx="0.8" fill="#FFDD00" opacity="0.5"/>
+              <rect x="2" y="12" width="3.5" height="9" rx="0.8" fill="#F2C811"/>
+              <rect x="7" y="8" width="3.5" height="13" rx="0.8" fill="#F2C811" opacity="0.85"/>
+              <rect x="12" y="4" width="3.5" height="17" rx="0.8" fill="#F2C811" opacity="0.7"/>
+              <rect x="17" y="1" width="3" height="20" rx="0.8" fill="#F2C811" opacity="0.5"/>
             </svg>
           </div>
-          <span class="stack-category-title" style="color:#ffdd00;">Business Intelligence</span>
+          <span class="stack-category-title" style="color:#f2c811;">Business Intelligence</span>
         </div>
         <div class="pills">
           <div class="pill pill-bi">Power BI</div>
