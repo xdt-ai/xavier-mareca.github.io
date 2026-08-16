@@ -88,7 +88,6 @@
       pointer-events: none; z-index: 0;
     }
     .wrap { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 0 2rem; }
-
     .reveal {
       opacity: 0; transform: translateY(16px);
       transition: opacity 0.5s ease, transform 0.5s ease;
@@ -97,8 +96,6 @@
     .reveal-delay-1 { transition-delay: 0.08s; }
     .reveal-delay-2 { transition-delay: 0.16s; }
     .reveal-delay-3 { transition-delay: 0.24s; }
-
-    /* NAV */
     nav {
       position: sticky; top: 0; z-index: 100;
       background: var(--bg-glass); backdrop-filter: blur(20px);
@@ -133,8 +130,6 @@
     .nav-links a:hover::after { width: 100%; }
     .nav-links a.active { color: var(--accent); }
     .nav-links a.active::after { width: 100%; }
-
-    /* HERO */
     .hero { padding: 5rem 0 3.5rem; }
     h1 {
       font-family: var(--mono); font-size: clamp(2.8rem, 6vw, 4.2rem);
@@ -156,7 +151,7 @@
       max-width: 520px; line-height: 1.7; margin-bottom: 2rem;
     }
     .hero-tagline strong { color: var(--text-primary); font-weight: 600; }
-    .hero-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+    .hero-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; max-width: 420px; }
     .btn {
       display: inline-flex; align-items: center; gap: 0.5rem;
       font-family: var(--mono); font-size: 13px; letter-spacing: 0.06em;
@@ -168,8 +163,6 @@
     .btn-ghost { background: transparent; color: var(--text-secondary); border-color: var(--border-hover); }
     .btn-ghost:hover { border-color: var(--accent-border); color: var(--accent); }
     .btn svg { width: 13px; height: 13px; }
-
-    /* METRICS */
     .metrics-grid {
       display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem;
       margin-top: 2.5rem; padding-top: 2.5rem; border-top: 1px solid var(--border);
@@ -191,8 +184,6 @@
       font-family: var(--mono); font-size: 13px; color: #9A9FA8;
       letter-spacing: 0.14em; text-transform: uppercase;
     }
-
-    /* SECTIONS */
     section { padding: 4.5rem 0; border-top: 1px solid var(--border); }
     .section-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2.25rem; }
     .section-tag {
@@ -204,15 +195,13 @@
       font-family: var(--mono); font-size: 1.35rem; font-weight: 700;
       color: var(--text-primary); letter-spacing: -0.01em; margin-bottom: 0.5rem;
     }
-
-    /* FILTER TABS */
     .filter-tabs {
-      display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; margin-bottom: 1.5rem;
+      display: flex; flex-wrap: nowrap; gap: 0.5rem; margin-top: 1.5rem; margin-bottom: 1.5rem;
       border-bottom: 1px solid var(--border); padding-bottom: 0;
+      overflow-x: auto; -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
     }
-    @media (min-width: 640px) {
-      .filter-tabs { flex-wrap: nowrap; }
-    }
+    .filter-tabs::-webkit-scrollbar { display: none; }
     .filter-tab {
       font-family: var(--mono); font-size: 14px; letter-spacing: 0.06em;
       text-transform: uppercase; color: var(--text-muted); background: none; border: none;
@@ -221,59 +210,30 @@
     }
     .filter-tab:hover { color: var(--text-secondary); }
     .filter-tab.active { color: var(--accent); border-bottom-color: var(--accent-petroleum-light); }
-
-    /* ABOUT */
-    .about-hook {
-      font-family: var(--mono); font-size: 13px; color: var(--accent);
-      letter-spacing: 0.04em; margin-bottom: 1rem;
-    }
-    .about-badge {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      font-family: var(--mono); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--accent); background: var(--accent-dim); border: 1px solid var(--accent-border);
-      padding: 0.3rem 0.85rem; border-radius: 100px; margin-bottom: 1rem;
-    }
-    .about-badge-dot { font-size: 13px; }
     .about-text {
       font-size: 14px; color: var(--text-secondary); line-height: 1.8;
       max-width: 660px; margin-bottom: 1.75rem;
     }
     .about-text strong { color: var(--text-primary); font-weight: 600; }
-    .about-areas {
-      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem;
-    }
+    .about-areas { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
     .about-area {
       background: var(--bg-card); border: 1px solid var(--border);
       border-radius: var(--radius); padding: 1.5rem; transition: all 0.18s;
       position: relative; overflow: hidden;
     }
-    .about-area::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-    }
+    .about-area::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; }
     .about-area.area-ai::before { background: var(--accent-purple); opacity: 0.7; }
     .about-area.area-cloud::before { background: var(--accent-orange); opacity: 0.7; }
     .about-area.area-bi::before { background: var(--accent-bi-color); opacity: 0.7; }
     .about-area:hover { border-color: var(--border-hover); background: var(--bg-card-hover); }
-    .about-area-icon {
-      width: 34px; height: 34px; border-radius: 6px; margin-bottom: 0.75rem;
-      display: flex; align-items: center; justify-content: center;
-    }
+    .about-area-icon { width: 34px; height: 34px; border-radius: 6px; margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: center; }
     .about-area-icon svg { width: 17px; height: 17px; }
-    .about-area-title {
-      font-family: var(--mono); font-size: 13px; font-weight: 700;
-      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.5rem;
-    }
+    .about-area-title { font-family: var(--mono); font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.5rem; }
     .about-area-text { font-size: 16px; color: var(--text-secondary); line-height: 1.7; }
     .about-area-text span { color: var(--text-primary); }
-    .about-footer {
-      margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--border);
-      font-size: 16px; color: var(--text-secondary); line-height: 1.7;
-    }
-    .about-footer strong { color: var(--text-secondary); font-weight: 600; }
+    .about-footer { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 16px; color: var(--text-secondary); line-height: 1.7; }
     .about-footer a { color: var(--accent); text-decoration: none; }
     .about-footer a:hover { text-decoration: underline; }
-
-    /* FOCUS */
     .focus-timeline { position: relative; margin-top: 1.25rem; padding-left: 2rem; }
     .focus-timeline::before {
       content: ''; position: absolute; left: 5px; top: 8px; bottom: 8px;
@@ -297,27 +257,19 @@
     .focus-title { font-family: var(--mono); font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 0.2rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .focus-text { font-size: 14px; color: var(--text-secondary); }
     .focus-badge {
-      font-family: var(--mono); font-size: 13px;
-      letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent);
-      background: var(--accent-dim); border: 1px solid var(--accent-border);
+      font-family: var(--mono); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--accent); background: var(--accent-dim); border: 1px solid var(--accent-border);
       padding: 0.1rem 0.45rem; border-radius: 3px; white-space: nowrap; flex-shrink: 0; align-self: center;
     }
     .focus-badge.completed { color: var(--accent-green); background: var(--accent-green-dim); border-color: var(--accent-green-border); }
     .focus-badge.researching { color: var(--accent-bi-color); background: var(--accent-bi-dim); border-color: var(--accent-bi-border); }
-
-    /* PROJECT CARDS */
-    .projects-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0;
-    }
+    .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0; }
     .project-card {
       background: var(--bg-card); border: 1px solid var(--border);
       border-radius: var(--radius); padding: 0; overflow: hidden;
       transition: all 0.2s; cursor: pointer; position: relative; display: flex; flex-direction: column;
     }
-    .project-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-      opacity: 0.7; transition: opacity 0.2s;
-    }
+    .project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; opacity: 0.7; transition: opacity 0.2s; }
     .project-card.card-ai::before { background: var(--accent-purple); }
     .project-card.card-bi::before { background: var(--accent-bi-color); }
     .project-card.card-data::before { background: var(--accent-data); }
@@ -325,43 +277,18 @@
     .project-card:hover { border-color: var(--border-hover); background: var(--bg-card-hover); transform: translateY(-2px); box-shadow: var(--shadow-soft); }
     .project-card:hover::before { opacity: 1; }
     .project-card.expanded { box-shadow: none; transform: none; }
-    .project-card-body { padding: 1.35rem 1.5rem; flex: 1; display: flex; flex-direction: column; gap: 0.7rem; }
     .project-body { padding: 1.35rem 1.5rem; flex: 1; display: flex; flex-direction: column; gap: 0.7rem; }
-    .project-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.5rem; }
     .project-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.5rem; }
-    .project-title {
-      font-family: var(--mono); font-size: 17px; font-weight: 700; color: var(--text-primary); line-height: 1.35;
-    }
-    .project-badge {
-      font-family: var(--mono); font-size: 13px;
-      letter-spacing: 0.08em; text-transform: uppercase; padding: 0.25rem 0.75rem; border-radius: 3px; white-space: nowrap; flex-shrink: 0;
-    }
+    .project-title { font-family: var(--mono); font-size: 17px; font-weight: 700; color: var(--text-primary); line-height: 1.35; }
+    .project-badge { font-family: var(--mono); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.25rem 0.75rem; border-radius: 3px; white-space: nowrap; flex-shrink: 0; }
     .badge-live { color: var(--accent-green); background: var(--accent-green-dim); border: 1px solid var(--accent-green-border); }
-    .badge-new { color: #9B8EC4; background: rgba(90,79,123,0.1); border: 1px solid rgba(90,79,123,0.22); }
     .badge-done { color: var(--accent-green); background: var(--accent-green-dim); border: 1px solid var(--accent-green-border); }
-    .badge-portfolio { color: var(--accent); background: var(--accent-dim); border: 1px solid var(--accent-border); }
     .project-desc { font-size: 17px; color: var(--text-secondary); line-height: 1.75; flex: 1; }
-    .project-meta {
-      display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: auto; padding-top: 0.7rem;
-      border-top: 1px solid var(--border);
-    }
-    .stack-tag {
-      font-family: var(--mono); font-size: 14px;
-      color: var(--text-muted); background: var(--bg);
-      border: 1px solid var(--border); border-radius: 3px; padding: 0.3rem 0.7rem;
-    }
-    .project-details {
-      max-height: 0; overflow: hidden; transition: max-height 0.3s ease, opacity 0.3s ease; opacity: 0;
-    }
+    .project-meta { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: auto; padding-top: 0.7rem; border-top: 1px solid var(--border); }
+    .stack-tag { font-family: var(--mono); font-size: 14px; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 0.3rem 0.7rem; }
+    .project-details { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, opacity 0.3s ease; opacity: 0; }
     .project-card.expanded .project-details { max-height: 300px; opacity: 1; }
-    .project-details-inner {
-      padding-top: 0.6rem; border-top: 1px solid var(--border);
-      font-size: 14px; color: var(--text-secondary); line-height: 1.7;
-    }
-    .project-details-inner code {
-      font-family: var(--mono); font-size: 13px; color: var(--accent);
-      background: var(--accent-dim); padding: 0.1rem 0.3rem; border-radius: 3px;
-    }
+    .project-details-inner { padding-top: 0.6rem; border-top: 1px solid var(--border); font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
     .project-result {
       display: inline-flex; align-items: center; gap: 0.35rem;
       font-family: var(--mono); font-size: 13px;
@@ -370,12 +297,9 @@
       border-radius: 3px; padding: 0.15rem 0.5rem; width: fit-content;
     }
     .project-result svg { width: 10px; height: 10px; }
-
-    /* STACK */
     .stack-category { margin-bottom: 2rem; }
     .stack-category-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.85rem; }
     .stack-category-icon { width: 18px; height: 18px; border-radius: 4px; display: flex; align-items: center; justify-content: center; }
-    .stack-category-icon svg { width: 12px; height: 12px; }
     .stack-category-title { font-family: var(--mono); font-size: 13px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; }
     .pills { display: flex; flex-wrap: wrap; gap: 0.45rem; }
     .pill {
@@ -394,93 +318,16 @@
     .pill-data:hover { border-color: rgba(43,92,120,0.35); }
     .pill-cloud::before { background: var(--accent-orange); }
     .pill-cloud:hover { border-color: var(--accent-orange-border); }
-
-    /* CONTACT */
-    .contact-wrap {
-      margin-top: 1.5rem; display: grid; grid-template-columns: 1fr 1.4fr; gap: 1rem; align-items: start;
-    }
-    .contact-info {
-      background: var(--bg-card); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.5rem; display: flex; flex-direction: column; gap: 1.1rem;
-    }
-    .contact-info-title {
-      font-family: var(--mono); font-size: 13px; font-weight: 700;
-      color: var(--text-primary); letter-spacing: 0.08em; text-transform: uppercase;
-    }
-    .contact-info-text { font-size: 16px; color: var(--text-secondary); line-height: 1.7; }
-    .contact-links { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.25rem; }
-    .contact-link {
-      display: flex; align-items: center; gap: 0.65rem;
-      font-family: var(--mono); font-size: 13px; color: var(--text-secondary);
-      text-decoration: none; padding: 0.6rem 0.85rem;
-      background: var(--bg); border: 1px solid var(--border);
-      border-radius: 6px; transition: all 0.18s;
-    }
-    .contact-link:hover { border-color: var(--accent-border); color: var(--accent); background: var(--accent-dim); }
-    .contact-link svg { width: 13px; height: 13px; flex-shrink: 0; }
-    .contact-link-label { opacity: 0.5; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; margin-left: auto; }
-    .contact-availability {
-      display: flex; align-items: center; gap: 0.5rem;
-      font-family: var(--mono); font-size: 13px; color: var(--text-muted);
-      padding-top: 0.75rem; border-top: 1px solid var(--border);
-    }
-    .contact-availability-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-green); flex-shrink: 0; animation: pulse 2s ease infinite; }
-
-    .contact-form {
-      background: var(--bg-card); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.5rem;
-    }
-    .form-row { display: flex; gap: 0.65rem; margin-bottom: 0.65rem; }
-    .form-group { flex: 1; margin-bottom: 0.65rem; }
-    .form-group:last-child { margin-bottom: 0; }
-    .form-label {
-      display: block; font-family: var(--mono); font-size: 13px;
-      color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.35rem;
-    }
-    .form-input, .form-textarea {
-      width: 100%; background: var(--bg); border: 1px solid var(--border);
-      border-radius: 6px; padding: 0.6rem 0.85rem; font-family: var(--sans);
-      font-size: 15px; color: var(--text-primary); outline: none; transition: border-color 0.18s;
-    }
-    .form-input:focus, .form-textarea:focus { border-color: var(--accent-border); }
-    .form-textarea { resize: vertical; min-height: 100px; }
-    .form-submit {
-      width: 100%; background: var(--accent-petroleum-light); color: var(--text-primary);
-      border: none; border-radius: 6px; padding: 0.75rem;
-      font-family: var(--mono); font-size: 13px; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer;
-      transition: all 0.18s; margin-top: 0.75rem;
-    }
-    .form-submit:hover { background: var(--accent); color: var(--bg); }
-    .form-status { margin-top: 0.6rem; font-family: var(--mono); font-size: 13px; text-align: center; display: none; }
-    .form-status.success { display: block; color: var(--accent-green); }
-    .form-hint {
-      margin-top: 0.6rem; text-align: center;
-      font-family: var(--mono); font-size: 13px; color: var(--text-muted);
-    }
-    .form-hint a { color: var(--accent); text-decoration: none; }
-    .form-hint a:hover { text-decoration: underline; }
-
-    @media (max-width: 768px) {
-      .contact-wrap { grid-template-columns: 1fr; }
-    }
-
-    /* FOOTER */
     footer { border-top: 1px solid var(--border); padding: 1.75rem 0; margin-top: 0.5rem; }
     .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
     .footer-left { font-family: var(--mono); font-size: 13px; color: var(--text-muted); }
     .footer-left strong { color: var(--text-secondary); }
     .footer-links { display: flex; align-items: center; gap: 0.75rem; }
-    .footer-link {
-      display: flex; align-items: center; gap: 0.4rem;
-      font-family: var(--mono); font-size: 13px; color: var(--text-muted);
-      text-decoration: none; transition: color 0.15s;
-    }
+    .footer-link { display: flex; align-items: center; gap: 0.4rem; font-family: var(--mono); font-size: 13px; color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
     .footer-link:hover { color: var(--accent); }
     .footer-link svg { width: 11px; height: 11px; flex-shrink: 0; }
     .footer-sep { color: var(--border-hover); font-size: 13px; }
     @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
-
     .back-to-top {
       position: fixed; bottom: 2.5rem; right: 1.5rem; z-index: 99;
       width: 36px; height: 36px; border-radius: 6px;
@@ -492,43 +339,18 @@
     .back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
     .back-to-top:hover { border-color: var(--accent-border); background: var(--bg-card-hover); }
     .back-to-top svg { width: 16px; height: 16px; fill: var(--text-secondary); }
-
     ::-webkit-scrollbar { width: 5px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--border-hover); border-radius: 3px; }
-
     @keyframes fadeUp { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
     .hero { animation: fadeUp 0.55s ease both; }
-
-    @keyframes xStroke { from { stroke-dashoffset: 32; } to { stroke-dashoffset: 0; } }
-    @keyframes nodeIn { from { opacity: 0; transform: scale(0.4); } to { opacity: 1; transform: scale(1); } }
-    @keyframes ringIn { from { opacity: 0; } to { opacity: 1; } }
-
-    .x-line { stroke-dasharray: 32; stroke-dashoffset: 32; animation: xStroke 0.6s ease forwards; }
-    .x-line-2 { animation-delay: 0.1s; }
-    .x-node { opacity: 0; transform-origin: center; animation: nodeIn 0.3s ease forwards; }
-    .x-node-d1 { animation-delay: 0.45s; }
-    .x-node-d2 { animation-delay: 0.55s; }
-    .x-node-d3 { animation-delay: 0.65s; }
-    .x-node-d4 { animation-delay: 0.75s; }
-    .x-node-c { animation-delay: 0.9s; }
-    .x-ring { opacity: 0; animation: ringIn 0.4s ease forwards; }
-    .x-ring-1 { animation-delay: 1.0s; }
-    .x-ring-2 { animation-delay: 1.15s; }
-
-    .nav-logo svg { transition: filter 0.3s ease; }
-    .nav-logo:hover svg { filter: none; }
     .nav-logo-img {
       height: 27px; width: auto; display: block;
       animation: subtlePulse 5s ease-in-out infinite;
     }
-    @keyframes subtlePulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.82; }
-    }
+    @keyframes subtlePulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.82; } }
     .nav-logo:hover .nav-logo-img { animation: none; opacity: 1; }
     .nav-logo-img.scrolled { animation: none; opacity: 0.8; }
-
     @media (max-width: 768px) {
       body { font-size: 16px; }
       .wrap { padding: 0 1.25rem; }
@@ -540,8 +362,8 @@
       .hero { padding: 3rem 0 2rem; }
       .hero-role { font-size: 12px; }
       .hero-tagline { font-size: 1rem; margin-bottom: 1.5rem; }
-      .hero-actions { display: flex; flex-direction: column; gap: 0.5rem; }
-      .hero-actions .btn { justify-content: center; width: 100%; }
+      .hero-actions { grid-template-columns: 1fr 1fr; max-width: 100%; }
+      .hero-actions .btn { justify-content: center; }
       .metrics-grid { grid-template-columns: 1fr 1fr; gap: 0.6rem; }
       .metric-value { font-size: 2.2rem; }
       .metric-card { padding: 1rem; }
@@ -553,11 +375,9 @@
       .focus-timeline { padding-left: 1.5rem; }
       .focus-item { padding: 0.85rem 1rem; }
       .focus-title { font-size: 15px; white-space: normal; overflow: visible; text-overflow: clip; }
-      .focus-text { font-size: 14px; }
-      .filter-tab { font-size: 12px; padding: 0.5rem 0.75rem; white-space: nowrap; border: 1px solid var(--border); border-radius: 4px; border-bottom-color: var(--border); }
-      .filter-tab.active { border-color: var(--accent-petroleum-light); background: rgba(43,92,120,0.1); }
+      .filter-tab { font-size: 12px; padding: 0.5rem 0.75rem; white-space: nowrap; }
+      .filter-tab.active { border-bottom-color: var(--accent-petroleum-light); }
       .projects-grid { grid-template-columns: 1fr; }
-      .project-card-body { padding: 1.1rem 1.1rem; }
       .project-body { padding: 1.1rem 1.1rem; }
       .project-title { font-size: 16px; }
       .project-desc { font-size: 15px; line-height: 1.65; }
@@ -566,13 +386,11 @@
       .pill { font-size: 14px; padding: 0.5rem 0.8rem; }
       .footer-inner { flex-direction: column; gap: 1rem; }
       .footer-links { flex-wrap: wrap; gap: 0.6rem; }
-      .form-row { flex-direction: column; }
       .back-to-top { display: none; }
     }
   </style>
 </head>
 <body>
-
 <nav>
   <div class="wrap nav-inner">
     <div class="nav-logo-wrap">
@@ -588,9 +406,7 @@
     </div>
   </div>
 </nav>
-
 <div class="wrap">
-
   <div class="hero">
     <h1><span class="name">Xavier</span><br><span class="accent">Mareca</span><span class="cursor"></span></h1>
     <p class="hero-role">Data &amp; AI Consultant</p>
@@ -612,42 +428,21 @@
         E-mail
       </a>
     </div>
-
     <div class="metrics-grid reveal">
-      <div class="metric-card">
-        <div class="metric-value" data-count="8">0</div>
-        <div class="metric-label">Years in BI</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-value green" data-count="10">0</div>
-        <div class="metric-label">Projects Delivered</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-value purple" data-count="5">0</div>
-        <div class="metric-label">AI Apps Built</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-value orange" data-count="4">0</div>
-        <div class="metric-label">EU Languages</div>
-      </div>
+      <div class="metric-card"><div class="metric-value" data-count="8">0</div><div class="metric-label">Years in BI</div></div>
+      <div class="metric-card"><div class="metric-value green" data-count="10">0</div><div class="metric-label">Projects Delivered</div></div>
+      <div class="metric-card"><div class="metric-value purple" data-count="5">0</div><div class="metric-label">AI Apps Built</div></div>
+      <div class="metric-card"><div class="metric-value orange" data-count="4">0</div><div class="metric-label">EU Languages</div></div>
     </div>
   </div>
-
-
-
-
-
-
   <section id="about">
     <div class="section-header"><span class="section-tag">Background</span><div class="section-line"></div></div>
-
     <h2 class="reveal" style="font-size:clamp(1.5rem,3.5vw,2.1rem);line-height:1.2;margin-bottom:0.6rem;">
       8 years reading data.<br><span style="color:var(--accent);">Now teaching machines to do it.</span>
     </h2>
     <p class="reveal reveal-delay-1" style="font-size:16px;color:var(--text-secondary);max-width:580px;line-height:1.8;margin-bottom:1.75rem;">
-      8 years in data, starting with Power BI, DAX, and semantic models across finance, retail, and logistics. From 2022, added AI to the mix — RAG pipelines, LangChain, SageMaker, multi-agent systems with CrewAI. The projects here sit at the intersection of both: pipelines that feed models, models that enhance dashboards, agents that automate the layer in between.
+      8 years in data &mdash; Power BI, DAX, and semantic models across finance, retail, and logistics. When LLMs became viable for production work, I moved into RAG pipelines, LangChain, and multi-agent systems with CrewAI. The projects here sit at the intersection of both: pipelines that feed models, models that enhance dashboards, agents that automate the layer in between.
     </p>
-
     <div class="about-areas reveal reveal-delay-2">
       <div class="about-area area-ai">
         <div class="about-area-icon" style="background:rgba(90,79,123,0.12);border:1px solid rgba(90,79,123,0.25);">
@@ -661,7 +456,7 @@
           <svg viewBox="0 0 24 24" fill="#C8855C"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
         </div>
         <div class="about-area-title" style="color:#C8855C;">Cloud Engineering</div>
-        <div class="about-area-text"><span>AWS SageMaker</span>, Lambda, Step Functions — serverless, event-driven architectures.</div>
+        <div class="about-area-text"><span>AWS SageMaker</span>, Lambda, Step Functions &mdash; serverless, event-driven architectures.</div>
       </div>
       <div class="about-area area-bi">
         <div class="about-area-icon" style="background:rgba(184,155,107,0.12);border:1px solid rgba(184,155,107,0.25);">
@@ -676,9 +471,8 @@
         <div class="about-area-text"><span>Advanced DAX</span>, semantic models, high-performance Power BI analytics.</div>
       </div>
     </div>
-
     <div class="about-footer reveal reveal-delay-3">
-      Spanish · French · English · German ·
+      Spanish &middot; French &middot; English &middot; German &middot;
       <a href="https://www.linkedin.com/in/xavier-mareca-247344148/?locale=en" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </section>
@@ -688,8 +482,8 @@
     <div class="focus-timeline reveal reveal-delay-1">
       <div class="focus-item active">
         <div class="focus-content">
-          <div class="focus-title">AWS MLA-C01 · DP-700</div>
-          <div class="focus-text">ML Engineering + Microsoft Fabric — dual exam track, 2026</div>
+          <div class="focus-title">AWS MLA&#8209;C01 &middot; DP&#8209;700</div>
+          <div class="focus-text">ML Engineering + Microsoft Fabric &mdash; dual exam track, 2026</div>
         </div>
         <span class="focus-badge">In Progress</span>
       </div>
@@ -709,11 +503,9 @@
       </div>
     </div>
   </section>
-
   <section id="projects">
     <div class="section-header"><span class="section-tag">Work</span><div class="section-line"></div></div>
     <h2 class="reveal">Selected projects</h2>
-
     <div class="filter-tabs reveal reveal-delay-1">
       <button class="filter-tab active" data-filter="all" onclick="filterProjects('all', this)">All Projects</button>
       <button class="filter-tab" data-filter="ai" onclick="filterProjects('ai', this)">AI &amp; LLMs</button>
@@ -721,166 +513,83 @@
       <button class="filter-tab" data-filter="data" onclick="filterProjects('data', this)">Data Engineering</button>
       <button class="filter-tab" data-filter="cloud" onclick="filterProjects('cloud', this)">Cloud &amp; APIs</button>
     </div>
-
     <div class="projects-grid">
       <div class="project-card card-ai reveal" data-cat="ai">
         <div class="project-body">
-          <div class="project-top">
-            <p class="project-title">AI-Powered BI Assistant</p>
-          </div>
-          <p class="project-desc">Natural language querying over structured data. RAG pipeline with full test suite — 86 integration tests with pytest.</p>
+          <div class="project-top"><p class="project-title">AI-Powered BI Assistant</p></div>
+          <p class="project-desc">Natural language querying over structured data. RAG pipeline with full test suite &mdash; 86 integration tests with pytest.</p>
           <div class="project-meta">
-            <span class="stack-tag">LangChain</span>
-            <span class="stack-tag">RAG</span>
-            <span class="stack-tag">Claude</span>
-            <span class="stack-tag">FastAPI</span>
-            <span class="stack-tag">ChromaDB</span>
+            <span class="stack-tag">LangChain</span><span class="stack-tag">RAG</span><span class="stack-tag">Claude</span><span class="stack-tag">FastAPI</span><span class="stack-tag">ChromaDB</span>
           </div>
           <span class="project-result"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>v1.0.0</span>
-          <div class="project-details">
-            <div class="project-details-inner">
-              • Handles complex JOINs and aggregations<br>
-              • CI/CD with GitHub Actions
-            </div>
-          </div>
+          <div class="project-details"><div class="project-details-inner">• Handles complex JOINs and aggregations<br>• CI/CD with GitHub Actions</div></div>
         </div>
       </div>
-
       <div class="project-card card-ai reveal reveal-delay-1" data-cat="ai">
         <div class="project-body">
-          <div class="project-top">
-            <p class="project-title">HR RAG Assistant</p>
-          </div>
+          <div class="project-top"><p class="project-title">HR RAG Assistant</p></div>
           <p class="project-desc">Multi-turn conversational assistant over HR policy documents. Session memory, automatic re-indexing on document updates.</p>
           <div class="project-meta">
-            <span class="stack-tag">LangChain</span>
-            <span class="stack-tag">ChromaDB</span>
-            <span class="stack-tag">Claude</span>
-            <span class="stack-tag">FastAPI</span>
-            <span class="stack-tag">GitHub Actions</span>
+            <span class="stack-tag">LangChain</span><span class="stack-tag">ChromaDB</span><span class="stack-tag">Claude</span><span class="stack-tag">FastAPI</span><span class="stack-tag">GitHub Actions</span>
           </div>
           <span class="project-result"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>CI/CD</span>
-          <div class="project-details">
-            <div class="project-details-inner">
-              • ConversationalRetrievalChain with memory<br>
-              • Docker + GitHub Actions pipeline
-            </div>
-          </div>
+          <div class="project-details"><div class="project-details-inner">• ConversationalRetrievalChain with memory<br>• Docker + GitHub Actions pipeline</div></div>
         </div>
       </div>
-
       <div class="project-card card-bi reveal reveal-delay-2" data-cat="bi">
         <div class="project-body">
-          <div class="project-top">
-            <p class="project-title">Sales Analytics Pipeline</p>
-          </div>
+          <div class="project-top"><p class="project-title">Sales Analytics Pipeline</p></div>
           <p class="project-desc">End-to-end pipeline from multiple sources to Power BI dashboards. PySpark + Delta Lake + star schema.</p>
           <div class="project-meta">
-            <span class="stack-tag">PySpark</span>
-            <span class="stack-tag">Delta Lake</span>
-            <span class="stack-tag">Power BI</span>
-            <span class="stack-tag">Azure</span>
+            <span class="stack-tag">PySpark</span><span class="stack-tag">Delta Lake</span><span class="stack-tag">Power BI</span><span class="stack-tag">Azure</span>
           </div>
           <span class="project-result"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Medallion arch.</span>
-          <div class="project-details">
-            <div class="project-details-inner">
-              • Bronze / Silver / Gold layers<br>
-              • Incremental refresh in Fabric
-            </div>
-          </div>
+          <div class="project-details"><div class="project-details-inner">• Bronze / Silver / Gold layers<br>• Incremental refresh in Fabric</div></div>
         </div>
       </div>
-
       <div class="project-card card-data reveal reveal-delay-1" data-cat="data">
         <div class="project-body">
-          <div class="project-top">
-            <p class="project-title">Document Intelligence</p>
-          </div>
+          <div class="project-top"><p class="project-title">Document Intelligence</p></div>
           <p class="project-desc">Automated extraction from unstructured documents using Claude + AWS Textract. JSON output with confidence scores.</p>
           <div class="project-meta">
-            <span class="stack-tag">Claude</span>
-            <span class="stack-tag">Python</span>
-            <span class="stack-tag">AWS Textract</span>
-            <span class="stack-tag">S3</span>
+            <span class="stack-tag">Claude</span><span class="stack-tag">Python</span><span class="stack-tag">AWS Textract</span><span class="stack-tag">S3</span>
           </div>
           <span class="project-result"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Structured output</span>
-          <div class="project-details">
-            <div class="project-details-inner">
-              • Serverless on AWS Lambda<br>
-              • Confidence scoring per field
-            </div>
-          </div>
+          <div class="project-details"><div class="project-details-inner">• Serverless on AWS Lambda<br>• Confidence scoring per field</div></div>
         </div>
       </div>
-
       <div class="project-card card-cloud reveal reveal-delay-2" data-cat="cloud">
         <div class="project-body">
-          <div class="project-top">
-            <p class="project-title">Serverless Data Pipeline</p>
-          </div>
-          <p class="project-desc">Event-driven architecture on AWS. Lambda + EventBridge + DynamoDB + API Gateway — SageMaker lab series.</p>
+          <div class="project-top"><p class="project-title">Serverless Data Pipeline</p></div>
+          <p class="project-desc">Event-driven architecture on AWS. Lambda + EventBridge + DynamoDB + API Gateway &mdash; SageMaker lab series.</p>
           <div class="project-meta">
-            <span class="stack-tag">AWS</span>
-            <span class="stack-tag">Lambda</span>
-            <span class="stack-tag">DynamoDB</span>
-            <span class="stack-tag">SageMaker</span>
+            <span class="stack-tag">AWS</span><span class="stack-tag">Lambda</span><span class="stack-tag">DynamoDB</span><span class="stack-tag">SageMaker</span>
           </div>
           <span class="project-result"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>7 labs</span>
-          <div class="project-details">
-            <div class="project-details-inner">
-              • Model Monitor + drift detection<br>
-              • Step Functions orchestration
-            </div>
-          </div>
+          <div class="project-details"><div class="project-details-inner">• Model Monitor + drift detection<br>• Step Functions orchestration</div></div>
         </div>
       </div>
-
-      <!-- Hidden cards for filter -->
       <div class="project-card card-ai reveal" data-cat="ai" style="display:none;">
         <div class="project-body">
-          <div class="project-top">
-            <p class="project-title">Enterprise Chatbot Platform</p>
-            <span class="project-badge badge-done">DONE</span>
-          </div>
+          <div class="project-top"><p class="project-title">Enterprise Chatbot Platform</p><span class="project-badge badge-done">DONE</span></div>
           <p class="project-desc">Multi-tenant conversational AI platform with role-based access control.</p>
-          <div class="project-meta">
-            <span class="stack-tag">LangChain</span>
-            <span class="stack-tag">FastAPI</span>
-            <span class="stack-tag">Claude</span>
-            <span class="stack-tag">PostgreSQL</span>
-          </div>
+          <div class="project-meta"><span class="stack-tag">LangChain</span><span class="stack-tag">FastAPI</span><span class="stack-tag">Claude</span><span class="stack-tag">PostgreSQL</span></div>
           <span class="project-result"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Multi-tenant</span>
         </div>
       </div>
-
       <div class="project-card card-bi reveal" data-cat="bi" style="display:none;">
         <div class="project-body">
-          <div class="project-top">
-            <p class="project-title">Fabric Data Lakehouse</p>
-            <span class="project-badge badge-done">DONE</span>
-          </div>
+          <div class="project-top"><p class="project-title">Fabric Data Lakehouse</p><span class="project-badge badge-done">DONE</span></div>
           <p class="project-desc">Microsoft Fabric lakehouse with incremental refresh and Unity Catalog governance.</p>
-          <div class="project-meta">
-            <span class="stack-tag">Fabric</span>
-            <span class="stack-tag">Delta Lake</span>
-            <span class="stack-tag">Unity Catalog</span>
-          </div>
+          <div class="project-meta"><span class="stack-tag">Fabric</span><span class="stack-tag">Delta Lake</span><span class="stack-tag">Unity Catalog</span></div>
           <span class="project-result"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Governance</span>
         </div>
       </div>
-
       <div class="project-card card-data" data-cat="data" style="display:none;">
         <div class="project-body">
-          <div class="project-top">
-            <p class="project-title">Real-Time Stream Processing</p>
-            <span class="project-badge badge-live">LIVE</span>
-          </div>
+          <div class="project-top"><p class="project-title">Real-Time Stream Processing</p><span class="project-badge badge-live">LIVE</span></div>
           <p class="project-desc">Kafka + Spark Streaming for real-time event processing at scale.</p>
-          <div class="project-meta">
-            <span class="stack-tag">Kafka</span>
-            <span class="stack-tag">Spark Streaming</span>
-            <span class="stack-tag">Python</span>
-          </div>
+          <div class="project-meta"><span class="stack-tag">Kafka</span><span class="stack-tag">Spark Streaming</span><span class="stack-tag">Python</span></div>
           <span class="project-result"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Real-time</span>
         </div>
       </div>
@@ -903,10 +612,7 @@
           <span class="stack-category-title" style="color:#C8A87A;">Business Intelligence</span>
         </div>
         <div class="pills">
-          <div class="pill pill-bi">Power BI</div>
-          <div class="pill pill-bi">DAX</div>
-          <div class="pill pill-bi">SQL Server</div>
-          <div class="pill pill-bi">Semantic Models</div>
+          <div class="pill pill-bi">Power BI</div><div class="pill pill-bi">DAX</div><div class="pill pill-bi">SQL Server</div><div class="pill pill-bi">Semantic Models</div>
         </div>
       </div>
       <div class="stack-category reveal reveal-delay-2">
@@ -915,12 +621,7 @@
           <span class="stack-category-title" style="color:#9B8EC4;">AI &amp; Agents</span>
         </div>
         <div class="pills">
-          <div class="pill pill-ai">CrewAI</div>
-          <div class="pill pill-ai">LangChain</div>
-          <div class="pill pill-ai">Anthropic Claude</div>
-          <div class="pill pill-ai">RAG</div>
-          <div class="pill pill-ai">Ollama</div>
-          <div class="pill pill-ai">Vector DBs</div>
+          <div class="pill pill-ai">CrewAI</div><div class="pill pill-ai">LangChain</div><div class="pill pill-ai">Anthropic Claude</div><div class="pill pill-ai">RAG</div><div class="pill pill-ai">Ollama</div><div class="pill pill-ai">Vector DBs</div>
         </div>
       </div>
       <div class="stack-category reveal reveal-delay-3">
@@ -929,12 +630,7 @@
           <span class="stack-category-title" style="color:#6DA5C4;">Data Engineering</span>
         </div>
         <div class="pills">
-          <div class="pill pill-data">PySpark</div>
-          <div class="pill pill-data">Delta Lake</div>
-          <div class="pill pill-data">Databricks</div>
-          <div class="pill pill-data">SQL</div>
-          <div class="pill pill-data">Python</div>
-          <div class="pill pill-data">Pandas</div>
+          <div class="pill pill-data">PySpark</div><div class="pill pill-data">Delta Lake</div><div class="pill pill-data">Databricks</div><div class="pill pill-data">SQL</div><div class="pill pill-data">Python</div><div class="pill pill-data">Pandas</div>
         </div>
       </div>
       <div class="stack-category reveal">
@@ -943,64 +639,51 @@
           <span class="stack-category-title" style="color:#C8855C;">Cloud &amp; APIs</span>
         </div>
         <div class="pills">
-          <div class="pill pill-cloud">Azure</div>
-          <div class="pill pill-cloud">AWS</div>
-          <div class="pill pill-cloud">Microsoft Fabric</div>
-          <div class="pill pill-cloud">FastAPI</div>
-          <div class="pill pill-cloud">Docker</div>
-          <div class="pill pill-cloud">GitHub Actions</div>
+          <div class="pill pill-cloud">Azure</div><div class="pill pill-cloud">AWS</div><div class="pill pill-cloud">Microsoft Fabric</div><div class="pill pill-cloud">FastAPI</div><div class="pill pill-cloud">Docker</div><div class="pill pill-cloud">GitHub Actions</div>
         </div>
       </div>
     </div>
   </section>
 </div>
-
 <footer>
   <div class="wrap footer-inner">
-    <div class="footer-left"><strong>Xavier Mareca</strong> · Data &amp; AI Consultant · EU</div>
+    <div class="footer-left"><strong>Xavier Mareca</strong> &middot; Data &amp; AI Consultant &middot; EU</div>
     <div class="footer-links">
       <a class="footer-link" href="mailto:hello@xavierdatatech.com">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
         hello@xavierdatatech.com
       </a>
-      <span class="footer-sep">·</span>
+      <span class="footer-sep">&middot;</span>
       <a class="footer-link" href="https://linkedin.com/in/xavier-mareca" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         LinkedIn
       </a>
-      <span class="footer-sep">·</span>
+      <span class="footer-sep">&middot;</span>
       <a class="footer-link" href="https://github.com/xdt-ai" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
         GitHub
       </a>
-      <span class="footer-sep">·</span>
+      <span class="footer-sep">&middot;</span>
       <a class="footer-link" href="https://x.com/xavierdatatech" target="_blank" rel="noopener" aria-label="X">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
       </a>
-      <span class="footer-sep">·</span>
-      <span class="footer-link" style="cursor:default;pointer-events:none;">© 2026 XavierDataTech</span>
+      <span class="footer-sep">&middot;</span>
+      <span class="footer-link" style="cursor:default;pointer-events:none;">&copy; 2026 XavierDataTech</span>
     </div>
   </div>
 </footer>
-
 <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
   <svg viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>
 </button>
-
 <script>
-/* LOGO SCROLL ATTENUATION */
 const navLogo = document.querySelector('.nav-logo-img');
 window.addEventListener('scroll', () => {
   if (navLogo) navLogo.classList.toggle('scrolled', window.scrollY > 100);
 }, { passive: true });
-
-/* SCROLL REVEAL */
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
 }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-/* COUNTERS */
 function animateCounters() {
   document.querySelectorAll('[data-count]').forEach(counter => {
     const target = parseInt(counter.dataset.count);
@@ -1019,47 +702,15 @@ const metricsObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 const mg = document.querySelector('.metrics-grid');
 if (mg) metricsObs.observe(mg);
-
-/* PROJECT FILTER */
 function filterProjects(cat, btn) {
-  const cards = document.querySelectorAll('.project-card');
-  const tabs = document.querySelectorAll('.filter-tab');
-  tabs.forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
-
-  cards.forEach(card => {
-    if (cat === 'all' || card.dataset.cat === cat) {
-      card.style.display = '';
-    } else {
-      card.style.display = 'none';
-    }
+  document.querySelectorAll('.project-card').forEach(card => {
+    card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
   });
 }
-
-/* PROJECT TOGGLE */
-function toggleProject(card) {
-  card.classList.toggle('expanded');
-}
-
-/* FORM */
-function handleSubmit(e) {
-  e.preventDefault();
-  const btn = e.target.querySelector('.form-submit');
-  const status = document.getElementById('formStatus');
-  btn.textContent = 'Sending...'; btn.disabled = true;
-  setTimeout(() => {
-    status.className = 'form-status success';
-    status.textContent = '\u2713 Message sent!';
-    btn.textContent = 'Sent!'; e.target.reset();
-    setTimeout(() => { btn.textContent = 'Send Message'; btn.disabled = false; status.className = 'form-status'; }, 4000);
-  }, 1500);
-}
-
-/* BACK TO TOP */
 const btt = document.getElementById('backToTop');
 window.addEventListener('scroll', () => { btt.classList.toggle('visible', window.scrollY > 500); });
-
-/* ACTIVE NAV */
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
 window.addEventListener('scroll', () => {
@@ -1074,36 +725,6 @@ navLinks.forEach(a => {
     if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
-
-/* PNG EXPORT */
-function downloadLogoPNG() {
-  const svgString = `<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 32 32" fill="none">
-    <line x1="5" y1="5" x2="27" y2="27" stroke="#00e5e5" stroke-width="1.8" stroke-linecap="round"/>
-    <line x1="27" y1="5" x2="5" y2="27" stroke="#00e5e5" stroke-width="1.8" stroke-linecap="round"/>
-    <circle cx="5" cy="5" r="2.3" fill="none" stroke="#00e5e5" stroke-width="1.1"/><circle cx="5" cy="5" r="0.9" fill="#00e5e5"/>
-    <circle cx="27" cy="5" r="2.3" fill="none" stroke="#00e5e5" stroke-width="1.1"/><circle cx="27" cy="5" r="0.9" fill="#00e5e5"/>
-    <circle cx="5" cy="27" r="2.3" fill="none" stroke="#00e5e5" stroke-width="1.1"/><circle cx="5" cy="27" r="0.9" fill="#00e5e5"/>
-    <circle cx="27" cy="27" r="2.3" fill="none" stroke="#00e5e5" stroke-width="1.1"/><circle cx="27" cy="27" r="0.9" fill="#00e5e5"/>
-    <circle cx="16" cy="16" r="5.5" fill="none" stroke="#00e5e5" stroke-width="0.6" opacity="0.3"/>
-    <circle cx="16" cy="16" r="8" fill="none" stroke="#00e5e5" stroke-width="0.4" opacity="0.12"/>
-    <circle cx="16" cy="16" r="2.8" fill="none" stroke="#00e5e5" stroke-width="1.2"/><circle cx="16" cy="16" r="1.1" fill="#00e5e5"/>
-    <circle cx="16" cy="16" r="7" fill="url(#g)" opacity="0.12"/>
-    <defs><radialGradient id="g"><stop stop-color="#00e5e5" stop-opacity="0.5"/><stop offset="1" stop-color="#00e5e5" stop-opacity="0"/></radialGradient></defs>
-  </svg>`;
-  const img = new Image();
-  img.onload = function() {
-    const c = document.createElement('canvas');
-    c.width = 1024; c.height = 1024;
-    const ctx = c.getContext('2d');
-    ctx.drawImage(img, 0, 0, 1024, 1024);
-    const a = document.createElement('a');
-    a.download = 'xavier-mareca-logo.png';
-    a.href = c.toDataURL('image/png');
-    a.click();
-  };
-  img.src = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svgString)));
-}
 </script>
-
 </body>
 </html>
