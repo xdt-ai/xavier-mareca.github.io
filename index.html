@@ -59,8 +59,8 @@
       --accent-green-dim: rgba(75,158,120,0.1);
       --accent-green-border: rgba(75,158,120,0.25);
       --text-primary: #F1F3F5;
-      --text-secondary: #A8ADB8;
-      --text-muted: #5E6370;
+      --text-secondary: #C4C8D4;
+      --text-muted: #8A909C;
       --border: rgba(62,201,220,0.10);
       --border-hover: rgba(62,201,220,0.22);
       --mono: 'Space Mono', monospace;
@@ -165,7 +165,7 @@
     .btn svg { width: 13px; height: 13px; }
     .metrics-grid {
       display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem;
-      margin-top: 2.5rem; padding-top: 2.5rem; border-top: 1px solid var(--border);
+      margin-top: 1.75rem; padding-top: 1.75rem; border-top: 1px solid var(--border);
     }
     .metric-card {
       background: var(--bg-card); border: 1px solid var(--border);
@@ -181,14 +181,14 @@
     .metric-value.purple { color: #A08EE8; }
     .metric-value.orange { color: #D46B42; }
     .metric-label {
-      font-family: var(--mono); font-size: 13px; color: #9A9FA8;
-      letter-spacing: 0.14em; text-transform: uppercase;
+      font-family: var(--mono); font-size: 12px; color: var(--text-muted);
+      letter-spacing: 0.08em; text-transform: uppercase;
     }
     section { padding: 4.5rem 0; border-top: 1px solid var(--border); }
     .section-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2.25rem; }
     .section-tag {
-      font-family: var(--mono); font-size: 13px; color: var(--text-muted);
-      letter-spacing: 0.2em; text-transform: uppercase; white-space: nowrap;
+      font-family: var(--mono); font-size: 12px; color: var(--text-muted);
+      letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap;
     }
     .section-line { flex: 1; height: 1px; background: var(--border); }
     h2 {
@@ -308,15 +308,10 @@
       border-radius: 6px; padding: 0.45rem 0.85rem;
       font-size: 14px; font-weight: 500; color: var(--text-secondary); transition: all 0.18s; cursor: default;
     }
-    .pill::before { content: ''; width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; opacity: 0.85; }
     .pill:hover { border-color: var(--border-hover); background: var(--bg-card-hover); }
-    .pill-bi::before { background: var(--accent-bi-color); }
     .pill-bi:hover { border-color: var(--accent-bi-border); }
-    .pill-ai::before { background: var(--accent-purple); }
     .pill-ai:hover { border-color: var(--accent-purple-border); }
-    .pill-data::before { background: var(--accent-data); }
     .pill-data:hover { border-color: rgba(43,122,155,0.38); }
-    .pill-cloud::before { background: var(--accent-orange); }
     .pill-cloud:hover { border-color: var(--accent-orange-border); }
     footer { border-top: 1px solid var(--border); padding: 1.75rem 0; margin-top: 0.5rem; }
     .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
@@ -361,7 +356,7 @@
       h1 { font-size: 3rem; }
       .hero { padding: 3rem 0 2rem; }
       .hero-role { font-size: 12px; }
-      .hero-tagline { font-size: 1rem; margin-bottom: 1.5rem; }
+      .hero-tagline { font-size: 1rem; margin-bottom: 1rem; }
       .hero-actions { grid-template-columns: 1fr 1fr; max-width: 100%; }
       .hero-actions .btn { justify-content: center; }
       .metrics-grid { grid-template-columns: 1fr 1fr; gap: 0.6rem; }
@@ -375,8 +370,10 @@
       .focus-timeline { padding-left: 1.5rem; }
       .focus-item { padding: 0.85rem 1rem; }
       .focus-title { font-size: 15px; white-space: normal; overflow: visible; text-overflow: clip; }
-      .filter-tab { font-size: 12px; padding: 0.5rem 0.75rem; white-space: nowrap; }
-      .filter-tab.active { border-bottom-color: var(--accent-petroleum-light); }
+      .filter-tab { font-size: 11px; padding: 0.5rem 0.65rem; white-space: nowrap; letter-spacing: 0.04em; }
+      .filter-tab.active { border-bottom-color: var(--accent); }
+      .filter-tabs { padding-bottom: 2px; }
+      .filter-tabs::after { content: ''; position: sticky; right: 0; width: 24px; height: 100%; background: linear-gradient(90deg, transparent, var(--bg)); pointer-events: none; flex-shrink: 0; }
       .projects-grid { grid-template-columns: 1fr; }
       .project-body { padding: 1.1rem 1.1rem; }
       .project-title { font-size: 16px; }
@@ -411,6 +408,10 @@
     <h1><span class="name">Xavier</span><br><span class="accent">Mareca</span><span class="cursor"></span></h1>
     <p class="hero-role">Data &amp; AI Consultant</p>
     <p class="hero-tagline">Practical data and AI systems. <strong>Without the hype.</strong></p>
+    <a class="btn btn-primary" href="#projects" style="display:inline-flex;margin-bottom:1rem;max-width:420px;width:100%;justify-content:center;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><polyline points="6 9 12 15 18 9"/></svg>
+      View Projects
+    </a>
     <div class="hero-actions">
       <a class="btn btn-primary" href="https://www.linkedin.com/in/xavier-mareca-247344148/?locale=en" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
@@ -423,10 +424,10 @@
       <a class="btn btn-ghost" href="https://x.com/xavierdatatech" target="_blank" rel="noopener" aria-label="X">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
       </a>
-      <a class="btn btn-ghost" href="mailto:hello@xavierdatatech.com">
+      <button class="btn btn-ghost" onclick="copyEmail(this)" style="cursor:pointer;">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         E-mail
-      </a>
+      </button>
     </div>
     <div class="metrics-grid reveal">
       <div class="metric-card"><div class="metric-value" data-count="8">0</div><div class="metric-label">Years in BI</div></div>
@@ -725,6 +726,14 @@ navLinks.forEach(a => {
     if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
+function copyEmail(btn) {
+  navigator.clipboard.writeText('hello@xavierdatatech.com').then(() => {
+    const orig = btn.innerHTML;
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
+    btn.style.color = 'var(--accent)';
+    setTimeout(() => { btn.innerHTML = orig; btn.style.color = ''; }, 2000);
+  });
+}
 </script>
 </body>
 </html>
