@@ -77,14 +77,14 @@
     body::before {
       content: ''; position: fixed; inset: 0;
       background-image:
-        linear-gradient(rgba(62,201,220,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(62,201,220,0.04) 1px, transparent 1px);
+        linear-gradient(rgba(62,201,220,0.028) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(62,201,220,0.028) 1px, transparent 1px);
       background-size: 48px 48px; pointer-events: none; z-index: 0;
     }
     body::after {
       content: ''; position: fixed; top: -20%; left: 50%;
       transform: translateX(-50%); width: 800px; height: 600px;
-      background: radial-gradient(ellipse, rgba(43,122,155,0.32) 0%, rgba(31,58,77,0.12) 50%, transparent 70%);
+      background: radial-gradient(ellipse, rgba(43,122,155,0.22) 0%, rgba(31,58,77,0.08) 50%, transparent 70%);
       pointer-events: none; z-index: 0;
     }
     .wrap { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 0 2rem; }
@@ -132,8 +132,8 @@
     .nav-links a.active::after { width: 100%; }
     .hero { padding: 4rem 0 3rem; }
     h1 {
-      font-family: var(--mono); font-size: clamp(2.8rem, 6vw, 4.2rem);
-      font-weight: 700; line-height: 1.05; letter-spacing: -0.025em; margin-bottom: 0.75rem;
+      font-family: var(--mono); font-size: clamp(2.6rem, 5.5vw, 3.8rem);
+      font-weight: 700; line-height: 1.05; letter-spacing: -0.025em; margin-bottom: 0.5rem;
     }
     h1 .name { color: var(--text-primary); }
     h1 .accent { color: var(--accent); }
@@ -143,40 +143,40 @@
     }
     @keyframes blink { 50%{opacity:0} }
     .hero-role {
-      font-family: var(--mono); font-size: 16px; color: var(--text-primary);
-      letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.6rem;
+      font-family: var(--mono); font-size: 15px; color: var(--text-muted);
+      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.5rem;
     }
     .hero-tagline {
-      font-size: 1.1rem; color: var(--text-secondary);
-      max-width: 520px; line-height: 1.7; margin-bottom: 2rem;
+      font-size: 1rem; color: var(--text-secondary);
+      max-width: 480px; line-height: 1.7; margin-bottom: 1.5rem;
     }
     .hero-tagline strong { color: var(--text-primary); font-weight: 600; }
     .hero-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; max-width: 420px; }
     .btn {
       display: inline-flex; align-items: center; gap: 0.5rem;
       font-family: var(--mono); font-size: 13px; letter-spacing: 0.06em;
-      text-transform: uppercase; text-decoration: none; padding: 0.75rem 1.5rem;
-      border-radius: 6px; transition: all 0.18s; border: 1px solid; cursor: pointer;
+      text-transform: uppercase; text-decoration: none; padding: 0.6rem 1.4rem;
+      border-radius: 4px; transition: all 0.18s; border: 1px solid; cursor: pointer;
     }
     .btn-primary { background: transparent; color: var(--accent); border-color: var(--accent); font-weight: 700; }
     .btn-primary:hover { background: var(--accent-petroleum-light); color: var(--text-primary); border-color: var(--accent-petroleum-light); }
     .btn-ghost { background: transparent; color: var(--text-secondary); border-color: var(--border-hover); }
     .btn-ghost:hover { border-color: var(--accent-border); color: var(--accent); }
-    .btn-cta { display: flex; width: 100%; max-width: 420px; justify-content: center; margin-bottom: 1rem; }
+    .btn-cta { display: flex; width: 100%; max-width: 420px; justify-content: center; margin-bottom: 0.75rem; }
     .btn svg { width: 13px; height: 13px; }
     .metrics-grid {
       display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem;
-      margin-top: 1.75rem; padding-top: 1.75rem; border-top: 1px solid var(--border);
+      margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid rgba(62,201,220,0.07);
     }
     .metric-card {
-      background: var(--bg-card); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1rem; text-align: center;
-      transition: all 0.18s;
+      background: var(--bg-card); border: 1px solid rgba(62,201,220,0.07);
+      border-radius: var(--radius); padding: 1rem 0.75rem; text-align: center;
+      transition: border-color 0.18s;
     }
     .metric-card:hover { border-color: var(--accent-border); }
     .metric-value {
-      font-family: var(--mono); font-size: 2.5rem; font-weight: 700;
-      color: var(--accent-bi-color); line-height: 1; margin-bottom: 0.25rem;
+      font-family: var(--mono); font-size: 2.2rem; font-weight: 700;
+      color: var(--accent-bi-color); line-height: 1; margin-bottom: 0.3rem;
     }
     .metric-value.green { color: var(--accent); }
     .metric-value.purple { color: var(--accent-purple); }
@@ -185,13 +185,13 @@
       font-family: var(--mono); font-size: 12px; color: var(--text-muted);
       letter-spacing: 0.08em; text-transform: uppercase;
     }
-    section { padding: 4rem 0; border-top: 1px solid var(--border); }
-    .section-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+    section { padding: 3.5rem 0; border-top: 1px solid rgba(62,201,220,0.07); }
+    .section-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.75rem; }
     .section-tag {
       font-family: var(--mono); font-size: 12px; color: var(--text-muted);
       letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap;
     }
-    .section-line { flex: 1; height: 1px; background: var(--border); }
+    .section-line { flex: 1; height: 1px; background: rgba(62,201,220,0.07); }
     h2 {
       font-family: var(--mono); font-size: 1.35rem; font-weight: 700;
       color: var(--text-primary); letter-spacing: -0.01em; margin-bottom: 0.5rem;
@@ -210,10 +210,10 @@
       border-bottom: 2px solid transparent; margin-bottom: -1px;
     }
     .filter-tab:hover { color: var(--text-secondary); }
-    .filter-tab.active { color: var(--accent); border-bottom-color: var(--accent-petroleum-light); }
+    .filter-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
     .about-text {
-      font-size: 16px; color: var(--text-secondary); line-height: 1.8;
-      max-width: 660px; margin-bottom: 1.75rem;
+      font-size: 16px; color: var(--text-secondary); line-height: 1.75;
+      max-width: 720px; margin-bottom: 1.25rem;
     }
     .about-text strong { color: var(--text-primary); font-weight: 600; }
     .about-areas { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
@@ -223,9 +223,9 @@
       position: relative; overflow: hidden;
     }
     .about-area::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; }
-    .about-area.area-ai::before { background: var(--accent-purple); opacity: 0.85; }
-    .about-area.area-cloud::before { background: var(--accent-orange); opacity: 0.85; }
-    .about-area.area-bi::before { background: var(--accent-bi-color); opacity: 0.85; }
+    .about-area.area-ai::before { background: var(--accent-purple); opacity: 0.65; }
+    .about-area.area-cloud::before { background: var(--accent-orange); opacity: 0.65; }
+    .about-area.area-bi::before { background: var(--accent-bi-color); opacity: 0.65; }
     .about-area:hover { border-color: var(--border-hover); background: var(--bg-card-hover); }
     .about-area-icon { width: 34px; height: 34px; border-radius: 6px; margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: center; }
     .about-area-icon svg { width: 17px; height: 17px; }
@@ -280,11 +280,11 @@
     .project-card.expanded { box-shadow: none; transform: none; }
     .project-body { padding: 1.35rem 1.5rem; flex: 1; display: flex; flex-direction: column; gap: 0.7rem; }
     .project-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.5rem; }
-    .project-title { font-family: var(--mono); font-size: 17px; font-weight: 700; color: var(--text-primary); line-height: 1.35; }
-    .project-badge { font-family: var(--mono); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.25rem 0.75rem; border-radius: 3px; white-space: nowrap; flex-shrink: 0; }
+    .project-title { font-family: var(--mono); font-size: 15px; font-weight: 700; color: var(--text-primary); line-height: 1.35; }
+    .project-badge { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 3px; white-space: nowrap; flex-shrink: 0; }
     .badge-live { color: var(--accent-green); background: var(--accent-green-dim); border: 1px solid var(--accent-green-border); }
     .badge-done { color: var(--accent-green); background: var(--accent-green-dim); border: 1px solid var(--accent-green-border); }
-    .project-desc { font-size: 17px; color: var(--text-secondary); line-height: 1.75; flex: 1; }
+    .project-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.7; flex: 1; }
     .project-meta { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: auto; padding-top: 0.7rem; border-top: 1px solid var(--border); }
     .stack-tag { font-family: var(--mono); font-size: 14px; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 0.3rem 0.7rem; }
     .project-details { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, opacity 0.3s ease; opacity: 0; }
@@ -366,7 +366,7 @@
       .btn-cta { max-width: 100%; }
       .hero-role { font-size: 12px; }
       .hero-tagline { font-size: 1rem; margin-bottom: 1rem; }
-      .hero-actions { grid-template-columns: 1fr 1fr; max-width: 100%; }
+      .hero-actions { grid-template-columns: 1fr; max-width: 100%; }
       .hero-actions .btn { justify-content: center; }
       .metrics-grid { grid-template-columns: 1fr 1fr; gap: 0.6rem; }
       .metric-value { font-size: 2.2rem; }
@@ -422,7 +422,7 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </a>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="https://www.linkedin.com/in/xavier-mareca-247344148/?locale=en" target="_blank" rel="noopener">
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/xavier-mareca-247344148/?locale=en" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         LinkedIn
       </a>
@@ -433,7 +433,7 @@
       <a class="btn btn-ghost" href="https://x.com/xavierdatatech" target="_blank" rel="noopener" aria-label="X">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
       </a>
-      <button class="btn btn-ghost" onclick="copyEmail(this)" style="cursor:pointer;">
+      <button class="btn btn-ghost" onclick="copyEmail(this)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         E-mail
       </button>
@@ -447,7 +447,7 @@
   </div>
   <section id="about">
     <div class="section-header"><span class="section-tag">Background</span><div class="section-line"></div></div>
-    <h2 class="reveal" style="font-size:clamp(1.5rem,3.5vw,2.1rem);line-height:1.2;margin-bottom:0.6rem;">
+    <h2 class="reveal" style="font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.15;margin-bottom:0.5rem;">
       8 years reading data.<br><span style="color:var(--accent);">Now teaching machines to do it.</span>
     </h2>
     <p class="about-text reveal reveal-delay-1">
