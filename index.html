@@ -741,9 +741,8 @@ const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
 window.addEventListener('scroll', () => {
   let cur = '';
-  const atBottom = (window.innerHeight + Math.round(scrollY)) >= document.body.scrollHeight - 5;
-  sections.forEach(s => { if (scrollY >= s.offsetTop - 100) cur = s.id; });
-  if (atBottom && sections.length) cur = sections[sections.length - 1].id;
+  const offset = window.innerHeight * 0.45;
+  sections.forEach(s => { if (scrollY >= s.offsetTop - offset) cur = s.id; });
   navLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + cur); });
 }, { passive: true });
 navLinks.forEach(a => {
